@@ -206,7 +206,9 @@ def join_strings(words):
         >>> join_strings([])
         ''
     """
+    joint_string = ''
 
+    
     return "Not the right thing"
 
 
