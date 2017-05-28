@@ -54,8 +54,8 @@ def n_long_words(words, n):
         >>> n_long_words(["I", "like", "apples", "bananas", "you"], 5)
         ['apples', 'bananas']
     """
-
-    return ['the wrong thing']
+    long_words = [word for word in words if len(word) > n]
+    return long_words
 
 
 def smallest_int(numbers):
@@ -98,8 +98,11 @@ def largest_int(numbers):
         >>> largest_int([]) is None
         True
     """
+    # largest_int = 
 
-    return 0
+    # for num in numbers: 
+
+    # return 0
 
 
 def halvesies(numbers):
@@ -116,8 +119,12 @@ def halvesies(numbers):
         >>> halvesies([1, 5])
         [0.5, 2.5]
     """
+    half_nums = []
 
-    return []
+    for number in numbers: 
+        half_nums.append(float(number) / 2)
+
+    return half_nums
 
 
 def word_lengths(words):
@@ -128,8 +135,12 @@ def word_lengths(words):
         >>> word_lengths(["hello", "hey", "hello", "spam"])
         [5, 3, 5, 4]
     """
+    word_len = []
 
-    return []
+    for word in words: 
+        word_len.append(len(word))
+    
+    return word_len
 
 
 def sum_numbers(numbers):
@@ -148,8 +159,12 @@ def sum_numbers(numbers):
         >>> sum_numbers([])
         0
     """
+    sum_nums = 0
 
-    return None
+    for number in numbers: 
+        sum_nums += number
+
+    return sum_nums
 
 
 def mult_numbers(numbers):
