@@ -47,7 +47,8 @@ def print_indices(items):
     
     """
 
-    print("Nothing at all")
+    for index, item in enumerate(items):
+        print index, item
 
 
 def foods_in_common(foods1, foods2):
@@ -85,8 +86,13 @@ def foods_in_common(foods1, foods2):
 
     """
 
-    return ['the wrong thing']
+    common_foods = []
 
+    for item in foods1:
+        if item in foods2 and item not in common_foods:
+            common_foods.append(item)
+
+    return sorted(common_foods)
 
 def every_other_item(items):
     """Return every other item in `items`, starting at first item.
@@ -130,7 +136,8 @@ def largest_n_items(items, n):
         [3, 3]
     """
 
-    return []
+    if n == 0:
+        return []
 
 
 #####################################################################
