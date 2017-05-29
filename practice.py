@@ -76,8 +76,13 @@ def smallest_int(numbers):
         >>> smallest_int([]) is None
         True
     """
+    
+    if len(numbers) == 0:
+        return None
 
-    return 100
+    else:
+        sorted_list = sorted(numbers)
+        return sorted_list[0]
 
 
 def largest_int(numbers):
@@ -98,12 +103,13 @@ def largest_int(numbers):
         >>> largest_int([]) is None
         True
     """
-    # largest_int = 
+    
+    if len(numbers) == 0:
+        return None
 
-    # for num in numbers: 
-
-    # return 0
-
+    else:
+        sorted_list = sorted(numbers)
+        return sorted_list[-1]
 
 def halvesies(numbers):
     """Return list of numbers from input list, each divided by two.
@@ -186,8 +192,16 @@ def mult_numbers(numbers):
         >>> mult_numbers([])
         1
     """
+    if len(numbers) == 0:
+        return 1
 
-    return None
+    else: 
+
+        mult_nums = 1
+        for number in numbers: 
+            mult_nums = mult_nums * number
+            
+        return mult_nums
 
 
 def join_strings(words):
@@ -207,9 +221,10 @@ def join_strings(words):
         ''
     """
     joint_string = ''
+    for word in words: 
+        joint_string += word
 
-    
-    return "Not the right thing"
+    return joint_string
 
 
 def average(numbers):
@@ -232,7 +247,15 @@ def average(numbers):
     a feel free to provide a good solution here.)
     """
 
-    return 0
+    # Sum all numbers in list and divide by the index number + 1
+
+    sum_nums = 0
+
+    for number in numbers: 
+        sum_nums += number
+
+    average = float(sum_nums) / len(numbers)
+    return average
 
 
 def join_strings_with_comma(words):
@@ -252,7 +275,8 @@ def join_strings_with_comma(words):
         'Pretzel'
     """
 
-    return ""
+
+    return 
 
 
 def reverse_list(items):
@@ -278,7 +302,7 @@ def reverse_list(items):
         ['apple', 'berry', 'cherry']
     """
 
-    return []
+    return items[::-1]
 
 
 def reverse_list_in_place(items):
@@ -304,7 +328,11 @@ def reverse_list_in_place(items):
         ['I', 'love', 'cookies']
     """
 
-    return []
+    for i in range(len(items) / 2):
+        end_index = len(items) - (i +1)
+        temp = items[i]
+        items[i] = items[end_index]
+        items[end_index] = temp
 
 
 def duplicates(items):
@@ -332,8 +360,19 @@ def duplicates(items):
         >>> orig
         ['apple', 'apple', 'berry']
     """
+    list_of_items = []
+    duplicates = []
 
-    return []
+    for item in items:
+        if item not in list_of_items:
+            list_of_items.append(item)
+
+        elif item not in duplicates:
+            duplicates.append(item)
+
+        return duplicates
+
+
 
 
 def find_letter_indices(words, letter):

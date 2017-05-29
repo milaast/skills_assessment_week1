@@ -138,12 +138,11 @@ def largest_n_items(items, n):
 
     if n == 0:
         return []
+
     else: 
         sorted_list = sorted(items)
 
         return sorted_list[-(n):]
-
-
 
 #####################################################################
 # END OF ASSESSMENT: You can ignore everything below.
